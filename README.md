@@ -1,34 +1,46 @@
 # Intel Görüntü Sınıflandırma (EfficientNetB0)
 
-## Proje Amacı
-- Projenin amacı, Akbank Derin Öğrenme Bootcamp'i kapsamında **görüntü sınıflandırma modeli geliştirmek ve modelin performansını değerlendirmektir.**
+##  Giriş
+Bu proje, **Akbank Derin Öğrenme Bootcamp** kapsamında gerçekleştirilmiştir.  
+Amaç, Kaggle üzerinde bulunan **Intel Image Classification** veri seti ile farklı sahneleri sınıflandıracak bir derin öğrenme modeli geliştirmektir.  
 
-## Veri Seti Hakkında
-- **Adı:** Intel Image Classification
-- **Sınıflar:** Buildings, Forest, Glacier, Mountain, Sea, Street
-- **Boyut:** ~25.000 eğitim, 14.000 test görüntüsü
-
-## Kullanılan Yöntemler
-- **Model:** Transfer öğrenme ile önceden eğitilmiş **EfficientNetB0** modeli kullanılmıştır.
-- **Veri Ön İşleme:** Görüntülerin boyutu 224x224 piksele yeniden boyutlandırıldı.
-- **Veri Artırımı (Data Augmentation):** Modelin genelleme yeteneğini artırmak için yatay çevirme, döndürme ve yakınlaştırma gibi teknikler uygulandı.
-
-## Elde Edilen Sonuçlar
-- **Doğruluk ve Kayıp Grafikleri:**
-  * Aşağıdaki grafikler, modelin eğitim ve doğrulama setlerinde başarılı bir şekilde öğrendiğini, **doğruluk (accuracy)** değerinin yükseldiğini ve **kayıp (loss)** değerinin düştüğünü göstermektedir. Overfitting gözlemlenmemiştir.
-  * (Grafiklerin ekran görüntüsünü buraya ekleyebilirsiniz.)
-
-- **Test Seti Sonuçları:**
-  * **Test Doğruluğu (Test Accuracy):** [Kaggle Notebook'unuzdaki **Hücre 11**'in çıktısından bu değeri kopyalayın ve buraya yapıştırın.]
-  * **Sınıflandırma Raporu:**
-    ```
-    [Kaggle Notebook'unuzdaki **Hücre 11**'in çıktısından sınıflandırma raporunu kopyalayın ve buraya yapıştırın.]
-    ```
-
-- **Grad-CAM Görselleştirmesi:**
-  * Modelin hangi bölgelere odaklandığını gösteren **Grad-CAM** görselleri, modelin başarılı bir şekilde [örnek bir sınıf adı yazın, örn: "Buildings" veya "Forest"] gibi sınıfları ayırt ederken doğru nesnelere odaklandığını göstermektedir.
-  * (Grad-CAM görselinin ekran görüntüsünü buraya ekleyebilirsiniz.)
+Projede **EfficientNetB0** tabanlı transfer learning yaklaşımı kullanılmıştır.  
+Veri artırma, erken durdurma (EarlyStopping), öğrenme oranı azaltma (ReduceLROnPlateau) ve Grad-CAM gibi yöntemlerle modelin başarımı artırılmış ve sonuçları görselleştirilmiştir.  
 
 ---
 
-**Kaggle Notebook Linki:** [Kaggle projenizin linkini buraya yapıştırın.]
+## Metrikler
+Eğitim süreci sonunda elde edilen sonuçlar:  
+- **Başlangıç doğruluk:** ~%70  
+- **Fine-tuning sonrası doğruluk:** ~%89-90  
+- **Kayıp (loss):** ~0.30 seviyelerine kadar düşmüştür.  
+
+ Bu değerler, modelin çok sınıflı görüntü sınıflandırma görevinde yüksek doğrulukla çalışabildiğini göstermektedir.  
+
+---
+
+##  Ekler
+- **Grad-CAM görselleştirmeleri:** Modelin karar verirken görüntünün hangi bölgelerine odaklandığını açıklamaktadır.  
+- **GPU Kullanımı:** Kaggle T4 GPU üzerinde eğitim yapılmıştır.  
+- **Model Kaydı:** En iyi epoch sonrası `best_model.h5` dosyası kaydedilmiştir.  
+
+Ek çalışmalar olarak:  
+- Farklı CNN backbone’ları ile (ResNet, VGG16) karşılaştırma yapılabilir.  
+- Streamlit veya Gradio ile basit bir kullanıcı arayüzü geliştirilebilir.  
+
+---
+
+##  Sonuç ve Gelecek Çalışmalar
+Bu proje ile sahne sınıflandırma problemine başarılı bir çözüm üretilmiştir.  
+
+**Gelecekte yapılabilecekler:**  
+- Daha geniş veri setleri ile yeniden eğitim  
+- Modelin mobil cihazlar için optimize edilmesi  
+- Gerçek zamanlı görüntü sınıflandırma uygulamaları geliştirilmesi  
+- Kullanıcıların kendi görsellerini yükleyip sınıflandırabileceği bir web arayüzü hazırlanması  
+
+---
+
+## 🔗 Linkler
+-  **Kaggle Notebook:** [Projeyi buradan inceleyebilirsiniz](https://www.kaggle.com/code/selimegndz/akbank/edit/run/263996493)  
+-  **Veri Seti:** [Intel Image Classification Dataset](https://www.kaggle.com/puneet6060/intel-image-classification)  
