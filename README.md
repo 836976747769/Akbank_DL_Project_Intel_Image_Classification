@@ -42,5 +42,5 @@ Bu proje ile sahne sınıflandırma problemine başarılı bir çözüm üretilm
 ---
 
 ## 🔗 Linkler
--  **Kaggle Notebook:** [Projeyi buradan inceleyebilirsiniz](https://www.kaggle.com/code/selimegndz/akbank)  
+-  **Kaggle Notebook:** [Projeyi buradan inceleyebilirsiniz](https://www.kaggle.com/code/selimegndz/akbank/edit/run/263996493)  
 -  **Veri Seti:** [Intel Image Classification Dataset](https://www.kaggle.com/puneet6060/intel-image-classification)  
